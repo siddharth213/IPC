@@ -94,6 +94,7 @@ int main(void)
   {
       printf("hello from rajesh\n");
 	  printf("hi \n");
+	  printf("night \n");
     /* USER CODE END WHILE */
 //test commit
     /* USER CODE BEGIN 3 */
