@@ -92,6 +92,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+      printf("hello from rajesh\n");
     /* USER CODE END WHILE */
 //test commit
     /* USER CODE BEGIN 3 */
