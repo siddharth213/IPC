@@ -93,6 +93,7 @@ int main(void)
   while (1)
   {
       printf("hello from rajesh\n");
+	  printf("hi \n");
     /* USER CODE END WHILE */
 //test commit
     /* USER CODE BEGIN 3 */
