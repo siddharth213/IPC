@@ -100,11 +100,12 @@ int main(void)
 
     /* USER CODE END WHILE */
 
-	 // checkallteltales();//sid
 
-	  getenginedata();//sid
 
-	 // speedata();//Rajesh
+	  getenginedata();
+
+
+
 
     /* USER CODE BEGIN 3 */
   }

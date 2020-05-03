@@ -8,7 +8,7 @@
 
 void getenginedata()
 {
-	uint8_t rpm = RxMessage.Data[0]
+	uint8_t rpm = RxMessage.Data[0];
 	       /* d0 = RxMessage.Data[0];
 	        d0 = RxMessage.Data[1];
 	        d0 = RxMessage.Data[2];
