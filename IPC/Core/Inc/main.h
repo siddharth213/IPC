@@ -42,7 +42,7 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+typedef unsigned char uint8_t;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

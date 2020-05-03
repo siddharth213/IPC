@@ -100,13 +100,6 @@ int main(void)
 
     /* USER CODE END WHILE */
 
-
-
-	  getenginedata();
-
-//hello test 123
-
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
