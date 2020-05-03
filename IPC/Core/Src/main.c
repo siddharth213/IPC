@@ -97,7 +97,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
+      printf("hello from rajesh\n");
+	  printf("hi \n");
+	  printf("good\n");
     /* USER CODE END WHILE */
 
 	 // checkallteltales();//sid
