@@ -237,7 +237,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : hand_Brake_Status_Inp_Pin seat_Belt_Status_Inp_Pin */
-  GPIO_InitStruct.Pin = hand_Brake_Status_Inp_Pin|seat_Belt_Status_Inp_Pin;
+  GPIO_InitStruct.Pin = handBrakeSts_Pin|seatBeltSts_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
