@@ -28,8 +28,37 @@ void getenginedata()
 }
 void rx_data()
 {
-	enginedata.data_pkt[0] = 0xAB; //LSB Engine RPM
-	enginedata.data_pkt[1] = 0xBA; //MSG Engine RPM
+	uint16_t rpm_value = ((rand () % 6000) + 1);
+
+
+	enginedata.data_pkt[0] = ((rpm_value >> 8) & 0x1f); //LSB Engine RPM
+	enginedata.data_pkt[1] = (rpm_value & 0xff); //MSG Engine RPM
 	enginedata.data_pkt[2] = 0xAb; //Temperature
 	enginedata.data_pkt[3] = 0x00; // 0 - no fault, 1- fault occured
 }
+
+
+
+
+
+#if 0
+HAL_GPIO_EXTI_Callback(GPIO_Pin)
+{
+	rpm = 60*1000/(millis() - timeold);
+
+	  timeold = millis();
+
+}
+#endif
+
+
+
+
+
+
+
+
+
+
+
+

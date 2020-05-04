@@ -29,7 +29,7 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
-
+#include <stdlib.h>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -68,6 +68,9 @@ void Error_Handler(void);
 #define engineFaultSts_GPIO_Port GPIOC
 #define handBrakeSts_Pin GPIO_PIN_3
 #define handBrakeSts_GPIO_Port GPIOC
+#define rpmPulseInput_Pin GPIO_PIN_8
+#define rpmPulseInput_GPIO_Port GPIOD
+#define rpmPulseInput_EXTI_IRQn EXTI9_5_IRQn
 #define doorAjarSts_Pin GPIO_PIN_15
 #define doorAjarSts_GPIO_Port GPIOD
 #define vehicleSpeed_Pin GPIO_PIN_6
