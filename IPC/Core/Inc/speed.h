@@ -1,0 +1,1 @@
+#define RESOLUTION 0.023333
