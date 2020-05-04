@@ -50,6 +50,8 @@ typedef unsigned char uint8_t;
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -58,6 +60,24 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define oilFaultSts_Pin GPIO_PIN_0
+#define oilFaultSts_GPIO_Port GPIOC
+#define seatBeltSts_Pin GPIO_PIN_1
+#define seatBeltSts_GPIO_Port GPIOC
+#define engineFaultSts_Pin GPIO_PIN_2
+#define engineFaultSts_GPIO_Port GPIOC
+#define handBrakeSts_Pin GPIO_PIN_3
+#define handBrakeSts_GPIO_Port GPIOC
+#define doorAjarSts_Pin GPIO_PIN_15
+#define doorAjarSts_GPIO_Port GPIOD
+#define vehicleSpeed_Pin GPIO_PIN_6
+#define vehicleSpeed_GPIO_Port GPIOC
+#define fuelLevel_Pin GPIO_PIN_7
+#define fuelLevel_GPIO_Port GPIOC
+#define engineRPM_Indicator_Pin GPIO_PIN_8
+#define engineRPM_Indicator_GPIO_Port GPIOC
+#define engineTempIndicator_Pin GPIO_PIN_9
+#define engineTempIndicator_GPIO_Port GPIOC
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
