@@ -12,7 +12,7 @@ void getenginedata()
 {
 	rx_data();
 
-	  uint16_t msg[2] = {0};
+	    uint16_t msg[2] = {0};
 	    uint16_t   rpm = 0;
 	    uint8_t engine_fault_sts = 0;
 	    double engine_temp = 0;
@@ -32,9 +32,9 @@ void rx_data()
 
 
 	enginedata.data_pkt[0] = ((rpm_value >> 8) & 0x1f); //LSB Engine RPM
-	enginedata.data_pkt[1] = (rpm_value & 0xff); //MSG Engine RPM
+	enginedata.data_pkt[1] = (rpm_value & 0xff); //MSB Engine RPM
 	enginedata.data_pkt[2] = 0xAb; //Temperature
-	enginedata.data_pkt[3] = 0x00; // 0 - no fault, 1- fault occured
+	enginedata.data_pkt[3] = 0x00; // 0x00 - no fault, 0xFF - fault
 }
 
 
