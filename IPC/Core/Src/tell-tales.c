@@ -64,7 +64,7 @@ static void MX_GPIO_Init(void);
   */
 void seatBelt_status(void)
 {
-	if(HAL_GPIO_ReadPin(GPIOC,seat_Belt_Status_Inp_Pin) == 0)
+	if(HAL_GPIO_ReadPin(GPIOC,seatBeltSts_Pin) == 0)
 	{
 	HAL_GPIO_WritePin(GPIOC,seatBelt_LED_Pin, GPIO_PIN_SET);
 	}
@@ -78,7 +78,7 @@ void seatBelt_status(void)
  * 		 the output value is set/reset on the specified pin*/
 void handBrake_status(void)
 {
-	if(HAL_GPIO_ReadPin(GPIOC,hand_Brake_Status_Inp_Pin) == 0)
+	if(HAL_GPIO_ReadPin(GPIOC,handBrakeSts_Pin) == 0)
 	{
 	HAL_GPIO_WritePin(GPIOC,handBrake_LED_Pin,GPIO_PIN_SET);
 	}
