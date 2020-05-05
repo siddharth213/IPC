@@ -71,6 +71,7 @@ int generateRandom_nums(int lower, int upper)
 * @return               : None
 **************************************************************************************************
 */
+TIM_HandleTypeDef htim4;
 void fuelLevel_status(void)
 {
 /*  0 to 200  --> Empty
@@ -83,21 +84,30 @@ void fuelLevel_status(void)
 	    // seed for random generator
 	    srand(time(0));
 
+	     HAL_TIM_Base_Start(&htim4);
+	    
+	    // Start PWM at Port-D pin#12
+	    HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_1);
+	    
 	    fuel_value = printRandom_nums(lower, upper);
+	while(1)
+	{
 	    if((fuel_value > 0) && (fuel_value <200) )
 	    {
 	    	/* Fuel is empty,PWM angle for motor is 0 deg */
-
+             __HAL_TIM_SetCompare(&htim4, TIM_CHANNEL_1, 50);
 	    }
 	    else if((fuel_value>500) && (fuel_value <750))
 	    {
 	    /* Fuel is half ,PWM angle for motor is 45 deg */
-
+             __HAL_TIM_SetCompare(&htim4, TIM_CHANNEL_1, 63);
 	    }
 	    else if((fuel_value >= 950) && (fuel_value <= 1023))
 	    {
 	     /* Fuel is full, PWM angle for motor is 90 deg */
+	     __HAL_TIM_SetCompare(&htim4, TIM_CHANNEL_1, 75);
 	    }
+	}
 
 }
 /*
