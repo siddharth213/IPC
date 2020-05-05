@@ -120,6 +120,14 @@ void fuelLevel_status(void)
 */
 void oilFault_status(void)
 {
+	if(HAL_GPIO_ReadPin(GPIOC,oilSts_Inp_Pin) == 0)
+		{
+		HAL_GPIO_WritePin(GPIOC,oilFault_LED_Pin, GPIO_PIN_SET);
+		}
+		else
+		{
+		HAL_GPIO_WritePin(GPIOC,oilFault_LED_Pin, GPIO_PIN_RESET);
+		}
 }
 
 
