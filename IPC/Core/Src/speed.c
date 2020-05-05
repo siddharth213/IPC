@@ -19,6 +19,7 @@ void speed()
     }
   
   }
+     odometerCount = odometerCount + 1 
 }
  
  
