@@ -57,7 +57,7 @@ void handBrake_status(void)
 */
 int generateRandom_nums(int lower, int upper)
 {
-       unsigned int num =0;
+       uint16_t num =0;
         num = (rand() % (upper - lower + 1)) + lower;
        // printf("%d ", num);
         return num;
@@ -76,9 +76,9 @@ void fuelLevel_status(void)
 /*  0 to 200  --> Empty
 	500 to 750 -->Half
 	900 to 1023 -->Full     */
-	unsigned int lower = 0;
-	unsigned int upper = 1023;
-	unsigned int fuel_value = 0;
+	uint16_t lower = 0;
+	uint16_t upper = 1023;
+	uint16_t fuel_value = 0;
 	    // Use current time as
 	    // seed for random generator
 	    srand(time(0));
