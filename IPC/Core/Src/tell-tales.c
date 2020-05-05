@@ -89,7 +89,7 @@ void fuelLevel_status(void)
 	    // Start PWM at Port-D pin#12
 	    HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_1);
 	    
-	    fuel_value = printRandom_nums(lower, upper);
+	    fuel_value = generateRandom_nums(lower, upper);
 	while(1)
 	{
 	    if((fuel_value > 0) && (fuel_value <200) )
