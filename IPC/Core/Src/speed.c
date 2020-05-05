@@ -1,7 +1,7 @@
 #include "speed.h"
 void speed()
 {
-  speed = rpm * RESOLUTION;
+  uint16_t engineSpeed = rpm * RESOLUTION;
 }
  
  

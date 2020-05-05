@@ -2,18 +2,21 @@
  * engineData.c
  *
  *  Created on: May 3, 2020
- *      Author: sidhu
+ *      Author: siddharth
  */
 #include "engineData.h"
 
 ENGINE_DATA enginedata;
 
+uint16_t   rpm = 0;
+
+/*This function decodes from CAN RX and store engine rpm */
 void getenginedata()
 {
 	rx_data();
 
 	    uint16_t msg[2] = {0};
-	    uint16_t   rpm = 0;
+
 	    uint8_t engine_fault_sts = 0;
 	    double engine_temp = 0;
 
@@ -22,10 +25,15 @@ void getenginedata()
 
 	    rpm = msg[0] | msg[1];
 
+	    if (rpm > MAX_RPM)
+	    	rpm = MAX_RPM;
+
 	    engine_temp = enginedata.data_pkt[2];
 	    engine_fault_sts = enginedata.data_pkt[3];
 
 }
+
+/*This function encodes engine data in to CAN TX data buffer and it is coming from ECM*/
 void rx_data()
 {
 	uint16_t rpm_value = ((rand () % 6000) + 1);
