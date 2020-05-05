@@ -1,7 +1,7 @@
 #include "speedometer.h"
 void speed()
 {
-
+  /* Here input rpm is multiply with RESOLUTION 0.023333 */
   uint16_t speed = rpm * RESOLUTION;
   
   uint16_t tempVar = 0;
@@ -10,16 +10,14 @@ void speed()
   
   for(tempVar = 0; tempVar <= rpm; tempVar++)
   {
-  
-  countVal = countVal + 1;
-    if(countVal == 43)
+    countVal = countVal + 1;
+    if(countVal == 43)  /* per one killometre no of revolutions per minute 43 */
     {
-    odometerCount = odometerCount + 1;
+      odometerCount = odometerCount + 1;
       countVal = 0;
     }
-  
   }
-     odometerCount = odometerCount + 1 
+   
 }
  
  
