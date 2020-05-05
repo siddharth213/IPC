@@ -12,7 +12,7 @@ void speed()
   {
   
   countVal = countVal + 1;
-    if(countVal == 42)
+    if(countVal == 43)
     {
     odometerCount = odometerCount + 1;
       countVal = 0;
