@@ -1,22 +1,19 @@
 
 #include "speedometer.h"
 
-
 uint16_t g_tripOneCount=0;
 uint16_t g_tripTwoCount=0;
-
 
 void speed()
 {
   
-  uint16_t speed = rpm * RESOLUTION;
-  
+  uint16_t speed = rpm * RESOLUTION;  
   uint16_t tempVar = 0;
   uint16_t countVal = 0;
   uint16_t odometerCount = 0;
   
   
-   uint16_t tripOneMeter=0;
+  uint16_t tripOneMeter=0;
   uint16_t tripTwoMeter=0;
   
   uint16_t trip_1_switch=0;
@@ -29,7 +26,7 @@ void speed()
     if(countVal == 43)  
     {
       odometerCount = odometerCount + 1;
-        tripOneMeter = tripOneMeter + 1;
+      tripOneMeter = tripOneMeter + 1;
       tripTwoMeter = tripTwoMeter + 1;
       
       if((trip_1_switch == 1 || tripOneMeter == 99))
@@ -53,8 +50,6 @@ void speed()
           
           tripTwoMeter =0;
       }
-    
-     
       
       countVal = 0;
     }
