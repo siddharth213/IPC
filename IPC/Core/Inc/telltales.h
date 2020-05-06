@@ -19,5 +19,6 @@ void seatBelt_status(void);
 void handBrake_status(void);
 int generateRandom_nums(int,int);
 void fuelLevel_status(void);
+void oilFault_status(void);
 
 #endif 
