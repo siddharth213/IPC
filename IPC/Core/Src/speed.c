@@ -9,8 +9,8 @@
 #include "speedometer.h"
 
 /* Global Variables */
-uint16_t g_tripOneCount=0;
-uint16_t g_tripTwoCount=0;
+uint16_t g_tripOneCount = 0;
+uint16_t g_tripTwoCount = 0;
 
 /* This function monitor speed of vehicle 
    odometer count and trip-1 and trip 2 count */
@@ -27,12 +27,12 @@ void speed()
   uint16_t odometerCount = 0;
   
   /*Local variables for trip-1 and trip-2 Count */
-  uint16_t tripOneMeterCount=0;
-  uint16_t tripTwoMeterCount=0;
+  uint16_t tripOneMeterCount = 0;
+  uint16_t tripTwoMeterCount = 0;
   
   /* input switches for Reset trip-1 and trip-2 Count */
-  uint16_t trip_1_Switch=0;
-  uint16_t trip_2_Switch=0;
+  uint16_t trip_1_Switch = 0;
+  uint16_t trip_2_Switch = 0;
   
   
   for(tempVar = 0; tempVar <= rpm; tempVar++)
@@ -56,12 +56,12 @@ void speed()
       if((trip_1_Switch == 1 || tripOneMeterCount == 99))
       {
           
-          if(tripOneMeterCount==99)
+          if(tripOneMeterCount == 99)
           {
              g_tripOneCount = tripOneMeterCount;
           }
     
-        tripOneMeterCount =0;
+        tripOneMeterCount = 0;
       }
       
       /* for Reset trip-2 count */
@@ -73,7 +73,7 @@ void speed()
              g_tripTwoCount = tripTwoMeterCount;
           }
           
-         tripTwoMeterCount =0;
+         tripTwoMeterCount = 0;
       }
       
       countVal = 0;
