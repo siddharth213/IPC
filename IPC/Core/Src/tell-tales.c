@@ -71,7 +71,7 @@ int generateRandom_nums(int lower, int upper)
 * @return               : None
 **************************************************************************************************
 */
-TIM_HandleTypeDef htim4;
+
 void fuelLevel_status(void)
 {
 /*  0 to 200  --> Empty
