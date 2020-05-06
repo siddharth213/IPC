@@ -1,3 +1,5 @@
+#if 0
+
 #include "speedometer.h"
 void speed()
 {
@@ -20,7 +22,7 @@ void speed()
    
 }
  
- 
+#endif
  
  
  

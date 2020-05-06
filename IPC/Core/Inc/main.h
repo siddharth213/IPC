@@ -32,7 +32,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdlib.h>
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -60,18 +60,18 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define oilFaultSts_Pin GPIO_PIN_0
-#define oilFaultSts_GPIO_Port GPIOC
-#define seatBeltSts_Pin GPIO_PIN_1
-#define seatBeltSts_GPIO_Port GPIOC
+#define oilFault_LED_Pin GPIO_PIN_0
+#define oilFault_LED_GPIO_Port GPIOC
+#define seatBelt_LED_Pin GPIO_PIN_1
+#define seatBelt_LED_GPIO_Port GPIOC
 #define engineFaultSts_Pin GPIO_PIN_2
 #define engineFaultSts_GPIO_Port GPIOC
-#define handBrakeSts_Pin GPIO_PIN_3
+#define handBrake_LED_Pin GPIO_PIN_3
+#define handBrake_LED_GPIO_Port GPIOC
+#define seatBeltSts_Pin GPIO_PIN_4
+#define seatBeltSts_GPIO_Port GPIOC
+#define handBrakeSts_Pin GPIO_PIN_5
 #define handBrakeSts_GPIO_Port GPIOC
-#define seatBeltInput_Pin GPIO_PIN_4
-#define seatBeltInput_GPIO_Port GPIOC
-#define handBrakeInput_Pin GPIO_PIN_5
-#define handBrakeInput_GPIO_Port GPIOC
 #define rpmPulseInput_Pin GPIO_PIN_8
 #define rpmPulseInput_GPIO_Port GPIOD
 #define rpmPulseInput_EXTI_IRQn EXTI9_5_IRQn
@@ -79,8 +79,8 @@ void Error_Handler(void);
 #define doorAjarSts_GPIO_Port GPIOD
 #define vehicleSpeed_Pin GPIO_PIN_6
 #define vehicleSpeed_GPIO_Port GPIOC
-#define fuelLevel_Pin GPIO_PIN_7
-#define fuelLevel_GPIO_Port GPIOC
+#define oilSts_Inp_Pin GPIO_PIN_7
+#define oilSts_Inp_GPIO_Port GPIOC
 #define engineRPM_Indicator_Pin GPIO_PIN_8
 #define engineRPM_Indicator_GPIO_Port GPIOC
 #define engineTempIndicator_Pin GPIO_PIN_9

@@ -14,6 +14,9 @@
  * @return          : None
  **************************************************************************************************
 */
+
+TIM_HandleTypeDef htim4;
+
 void seatBelt_status(void)
 {
 	if(HAL_GPIO_ReadPin(GPIOC,seatBeltSts_Pin) == 0)
@@ -87,7 +90,7 @@ void fuelLevel_status(void)
 	     HAL_TIM_Base_Start(&htim4);
 	    
 	    // Start PWM at Port-D pin#12
-	    HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_1);
+	   HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_1);
 	    
 	    fuel_value = generateRandom_nums(lower, upper);
 	while(1)

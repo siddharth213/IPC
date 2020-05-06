@@ -2,7 +2,7 @@
  * engineData.h
  *
  *  Created on: May 3, 2020
- *      Author: sidhu
+ *      Author: Siddharth
  */
 
 #ifndef SRC_ENGINEDATA_H_
