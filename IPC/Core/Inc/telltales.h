@@ -13,6 +13,7 @@
 #ifndef TELLTALES_H_
 #define TELLTALES_H_
 
+#endif 
 
 
 void seatBelt_status(void);
@@ -21,4 +22,4 @@ int generateRandom_nums(int,int);
 void fuelLevel_status(void);
 void oilFault_status(void);
 
-#endif 
+
