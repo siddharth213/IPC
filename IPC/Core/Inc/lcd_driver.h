@@ -88,5 +88,26 @@ void LCD_Send_String_On_Line1(char *str);
  */
 void LCD_Send_String_On_Line2(char *str);
 
+/**
+* @brief Set the time
+* @param None
+* @retval None
+*/
+void set_time(void);
+
+/**
+* @brief Get the time
+* @param None
+* @retval None
+*/
+
+void get_time(void);
+
+/**
+* @brief Display the time and date
+* @param None
+* @retval None
+*/
+void display_time(void);
 
 #endif /* INC_LCD_DRIVER_H_ */
