@@ -13,8 +13,6 @@
 #ifndef TELLTALES_H_
 #define TELLTALES_H_
 
-#endif 
-
 
 void seatBelt_status(void);
 void handBrake_status(void);
@@ -23,3 +21,4 @@ void fuelLevel_status(void);
 void oilFault_status(void);
 
 
+#endif 
