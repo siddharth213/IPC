@@ -8,20 +8,16 @@
 
 #include "speedometer.h"
 
-/* Global Variables */
-uint16_t g_tripOneCount = 0;
-uint16_t g_tripTwoCount = 0;
-
-/* This function monitor speed of vehicle 
-   odometer count and trip-1 and trip 2 count */
+/* This function monitors speed of vehicle, 
+   odometer count, trip-1 and trip 2 count */
    
 void speed()
 {
    
-  /* Depending on input rpm  speed updates */
+  /* Depending on input rpm  speed changes */
   uint16_t speed = rpm * RESOLUTION;  
   
-  /* Local variables for odmeter count */
+  /* Local variables for odometer count */
   uint16_t tempVar = 0;
   uint16_t countVal = 0;
   uint16_t odometerCount = 0;
@@ -39,8 +35,8 @@ void speed()
   {
     countVal = countVal + 1;
     
-    /* for 43 rpm values one killo meter will count Odometer */ 
-    if(countVal == 43)  
+    /* for every one kilometer odometer incremented */ 
+    if(countVal == ONEKM)  
     {
       /* for odometer count */
       odometerCount = odometerCount + 1;
@@ -55,24 +51,13 @@ void speed()
       /* for Reset trip-1 count */
       if((trip_1_Switch == 1 || tripOneMeterCount == 99))
       {
-          
-          if(tripOneMeterCount == 99)
-          {
-             g_tripOneCount = tripOneMeterCount;
-          }
     
         tripOneMeterCount = 0;
       }
       
       /* for Reset trip-2 count */
        if((trip_2_Switch == 1 || tripTwoMeterCount == 999))
-      {
-          
-          if(tripTwoMeterCount == 999)
-          {
-             g_tripTwoCount = tripTwoMeterCount;
-          }
-          
+      {   
          tripTwoMeterCount = 0;
       }
       
