@@ -4,9 +4,9 @@
  *  Created on: May 7, 2020
  *      Author: Kala
  */
-#include"main.c"
-#include"lcd_driver.h"
-#include<stdio.h>
+#include "main.h"
+#include "lcd_driver.h"
+#include <stdio.h>
 
 I2C_HandleTypeDef hi2c1;
 

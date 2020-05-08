@@ -4,7 +4,7 @@
  *  Created on: May 7, 2020
  *      Author: DEADM
  */
-
+#include "main.h"
 #ifndef INC_LCD_DRIVER_H_
 #define INC_LCD_DRIVER_H_
 

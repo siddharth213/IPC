@@ -5,6 +5,7 @@
  *  Author : M Rajesh
    
    */
+#if 0
 
 #include "speedometer.h"
 
@@ -67,6 +68,9 @@ void speed()
    
 }
 
+
+
+#endif
  
  
  
