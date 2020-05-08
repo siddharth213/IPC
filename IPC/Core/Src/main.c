@@ -113,6 +113,7 @@ int main(void)
   {
 
     /* USER CODE END WHILE */
+	  getenginedata();
 
     /* USER CODE BEGIN 3 */
   }
