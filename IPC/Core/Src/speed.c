@@ -5,7 +5,7 @@
  *  Author : M Rajesh
    
    */
-#if 0
+
 
 #include "speedometer.h"
 
@@ -37,7 +37,7 @@ void speed()
     countVal = countVal + 1;
     
     /* for every one kilometer odometer incremented */ 
-    if(countVal == ONEKM)  
+    if(countVal == ONEKM)
     {
       /* for odometer count */
       odometerCount = odometerCount + 1;
@@ -70,7 +70,7 @@ void speed()
 
 
 
-#endif
+
  
  
  

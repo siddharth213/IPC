@@ -10,9 +10,9 @@ void battery_info()
      2048 to 3071 --> 75%
      3072 to 4095 -->100%  */
   
-  uint16_t batteryStatus[5] = {0,25,50,75,100};
+  uint8_t batteryStatus[5] = {0,25,50,75,100};
   
-  uint16_t batteryPercentage = 0;
+  uint8_t batteryPercentage = 0;
   
   uint16_t adcValue = ((rand () % 4095) + 1);
 
