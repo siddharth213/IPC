@@ -74,7 +74,7 @@ static void MX_TIM6_Init(void);
 
 /**
   * @brief  The application entry point.
-  * @retval int
+  * @retval intaux_on_condition()
   */
 int main(void)
 {
@@ -107,7 +107,7 @@ int main(void)
   MX_RTC_Init();
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
-
+  aux_on_condition(); //Aux condition check
   /* USER CODE END 2 */
 
   /* Infinite loop */
