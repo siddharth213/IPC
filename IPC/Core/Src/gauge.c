@@ -1,9 +1,11 @@
 #include "telltales.h"
 #include "main.h"
 
-void servo_write(int angle)
+void servo_write(int angle, gauge_type Gauge)
 {
+	if(Gauge == FUEL_LEVEL_GAUGE)
 	htim1.Instance->CCR1 = map(0,180,50,250,angle);
+
 }
 
 int map(int st1, int fn1, int st2, int fn2, int value)

@@ -15,7 +15,7 @@
  **************************************************************************************************
 */
 
-
+gauge_type Gauge;
 
 void seatBelt_status(void)
 {
@@ -98,17 +98,17 @@ void fuelLevel_status(void)
 	    if((fuel_value > 0) && (fuel_value <200) )
 	    {
 	    	/* Fuel is empty,PWM angle for motor is 0 deg */
-            servo_write(0);
+            servo_write(0, FUEL_LEVEL_GAUGE);
 	    }
 	    else if((fuel_value>500) && (fuel_value <750))
 	    {
 	    /* Fuel is half ,PWM angle for motor is 45 deg */
-	    	servo_write(40);
+	    	servo_write(45, FUEL_LEVEL_GAUGE);
 	    }
 	    else if((fuel_value >= 950) && (fuel_value <= 1023))
 	    {
 	     /* Fuel is full, PWM angle for motor is 90 deg */
-	    	servo_write(90);
+	    	servo_write(90, FUEL_LEVEL_GAUGE);
 	    }
 
 
