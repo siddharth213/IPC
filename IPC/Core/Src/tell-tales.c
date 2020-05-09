@@ -15,7 +15,7 @@
  **************************************************************************************************
 */
 
-TIM_HandleTypeDef htim4;
+
 
 void seatBelt_status(void)
 {
@@ -87,27 +87,28 @@ void fuelLevel_status(void)
 	    // seed for random generator
 	    srand(time(0));
 
-	     HAL_TIM_Base_Start(&htim4);
+	    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
 	    
 	    // Start PWM at Port-D pin#12
-	   HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_1);
+
 	    
 	    fuel_value = generateRandom_nums(lower, upper);
+
 
 	    if((fuel_value > 0) && (fuel_value <200) )
 	    {
 	    	/* Fuel is empty,PWM angle for motor is 0 deg */
-             __HAL_TIM_SetCompare(&htim4, TIM_CHANNEL_1, 50);
+            servo_write(0);
 	    }
 	    else if((fuel_value>500) && (fuel_value <750))
 	    {
 	    /* Fuel is half ,PWM angle for motor is 45 deg */
-             __HAL_TIM_SetCompare(&htim4, TIM_CHANNEL_1, 63);
+	    	servo_write(40);
 	    }
 	    else if((fuel_value >= 950) && (fuel_value <= 1023))
 	    {
 	     /* Fuel is full, PWM angle for motor is 90 deg */
-	     __HAL_TIM_SetCompare(&htim4, TIM_CHANNEL_1, 75);
+	    	servo_write(90);
 	    }
 
 
