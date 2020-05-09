@@ -93,8 +93,7 @@ void fuelLevel_status(void)
 	   HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_1);
 	    
 	    fuel_value = generateRandom_nums(lower, upper);
-	while(1)
-	{
+
 	    if((fuel_value > 0) && (fuel_value <200) )
 	    {
 	    	/* Fuel is empty,PWM angle for motor is 0 deg */
@@ -110,7 +109,7 @@ void fuelLevel_status(void)
 	     /* Fuel is full, PWM angle for motor is 90 deg */
 	     __HAL_TIM_SetCompare(&htim4, TIM_CHANNEL_1, 75);
 	    }
-	}
+
 
 }
 /*
