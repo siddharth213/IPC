@@ -1,6 +1,7 @@
 
+#include "main.h"
 
-int main()
+void battery_info()
 {
 
   /* 0 to 255 --> 0%
@@ -13,9 +14,8 @@ int main()
   
   uint16_t batteryPercentage = 0;
   
-  
-  while(1)
-  {
+  uint16_t adcValue = ((rand () % 4095) + 1);
+
   
   if(( adcValue > 0 ) && ( adcValue <= 255 ))
   {
@@ -41,6 +41,6 @@ int main()
   {
   batteryPercentage = batteryStatus[4];
   }
-  }
+
 
 }
