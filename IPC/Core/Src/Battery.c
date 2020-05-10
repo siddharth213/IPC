@@ -15,12 +15,12 @@ CAN_msg batteryData;
 void battery_CAN_TX()
 {
 
-	uint16_t batteryrawADC = ((rand () % 4095) + 1);//engine temperature ADC random value
+	uint16_t batteryrawADC = ((rand () % 4095) + 1);// ADC random value of Battery
 
 	batteryData.id = 1000; //msg id of PW&L
 
-	batteryData.data_pkt[0] = ((batteryrawADC >> 8) & 0x1f); //LSB Engine RPM
-	batteryData.data_pkt[1] = (batteryrawADC & 0xff); //MSB Engine RPM
+	batteryData.data_pkt[0] = ((batteryrawADC >> 8) & 0x1f); //LSB ADC value of Battery
+	batteryData.data_pkt[1] = (batteryrawADC & 0xff); //MSB ADC value of battery
 
 
 }
