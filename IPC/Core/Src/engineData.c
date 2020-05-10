@@ -6,7 +6,7 @@
  */
 #include "engineData.h"
 
-ENGINE_DATA enginedata;
+CAN_msg enginedata;
 
 uint16_t   rpm = 0;
 
