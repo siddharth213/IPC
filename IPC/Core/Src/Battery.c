@@ -1,8 +1,34 @@
+/* speed.c
+
+*   created on: 4 May 2020
+
+ *  Author : M Rajesh
+
+   */
+
+
 
 #include "main.h"
+#include "CAN.H"
+
+
+CAN_msg batteryData;
+
+void battery_CAN_TX()
+{
+
+	uint16_t batteryrawADC = ((rand () % 4095) + 1);//engine temperature ADC random value
+
+
+	batteryData.data_pkt[0] = ((batteryrawADC >> 8) & 0x1f); //LSB Engine RPM
+	batteryData.data_pkt[1] = (batteryrawADC & 0xff); //MSB Engine RPM
+
+
+}
 
 void battery_info()
 {
+
 
   /* 0 to 255 --> 0%
      256 to 1023 --> 25%
