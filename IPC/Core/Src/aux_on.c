@@ -2,7 +2,7 @@
  * aux_on.c
  *
  *  Created on: May 9, 2020
- *      Author: sidhu
+ *      Author: siddharth
  */
 
 #include "main.h"
