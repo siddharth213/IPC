@@ -20,7 +20,8 @@ EngineDataOut * getenginedata(void)
 
 	    uint8_t rawTemp = 0;
 
-
+	    if(enginedata.id == 500) //msg ID of ECM is 500
+	    {
 
 	    /*Engine RPM decode*/
 	    msg[0] = (((uint16_t)enginedata.data_pkt[0]) & 0x001f) << 8;
@@ -45,8 +46,10 @@ EngineDataOut * getenginedata(void)
 
 
 	    decodeEngineData.engine_fault_sts = msg[4] & 0xff; // 0 - No Fault, 0xFF - Fault occurred
-
 	    return &decodeEngineData;
+	    }
+
+
 }
 
 /*This function encodes engine data in to CAN TX data buffer and it is coming from ECM*/
@@ -63,6 +66,8 @@ void rx_data()
 	enginedata.data_pkt[3] = (engine_temp & 0xff); //MSB Engine Temperature ADC value
 
 	enginedata.data_pkt[4] = 0x00; // 0x00 - no fault, 0xFF - fault
+
+	enginedata.id == 500;
 }
 
 
