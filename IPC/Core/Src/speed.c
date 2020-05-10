@@ -8,6 +8,7 @@
 
 
 #include "speedometer.h"
+#include "telltales.h"
 
 /* This function monitors speed of vehicle, 
    odometer count, trip-1 and trip 2 count */
@@ -37,6 +38,13 @@ void speed(EngineDataOut * engineSpeed)
 
 
   speed = engineSpeed->rpm * RESOLUTION;
+
+
+  servo_write((speed/MAX_SPEED)*180, ENGINE_SPEED_GAUGE);
+
+  HAL_Delay(20);
+
+
 
   for(tempVar = 0; tempVar <= rpm; tempVar++)
   {

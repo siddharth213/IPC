@@ -7,7 +7,8 @@
 #include "engineData.h"
 extern uint16_t rpm;
 #define ONEKM 43
-#define RESOLUTION (140/MAX_RPM)
+#define MAX_SPEED 140
+#define RESOLUTION (MAX_SPEED/MAX_RPM)
 
 void speed(EngineDataOut * engineSpeed);
 

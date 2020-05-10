@@ -6,16 +6,24 @@
  */
 
 #include "main.h"
+#include "telltales.h"
 uint8_t flag = 1;
 
 void aux_on_condition()
 {
 	if(flag)
 	{
+
+	/* All telltales on*/
 	HAL_GPIO_WritePin(GPIOC,oilFault_LED_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(GPIOC,handBrake_LED_Pin,GPIO_PIN_SET);
 	HAL_GPIO_WritePin(GPIOC,seatBelt_LED_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(GPIOC,engineFaultSts_Pin, GPIO_PIN_SET);
+
+	/*Gauges needle to 0 degree */
+	servo_write(0, FUEL_LEVEL_GAUGE);
+	servo_write(0, ENGINE_SPEED_GAUGE);
+	servo_write(0, ENGINE_TEMP_GAUGE);
 
 	}
 
@@ -53,15 +61,3 @@ HAL_TIM_PeriodElapsedCallback(htim)
 }
 
 
-#if 0
-HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-	if(count++ == 5)
-	{
-		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, 1);
-		HAL_TIM_Base_Stop_IT(&htim6);
-		count = 0;
-		__HAL_TIM_SET_COUNTER(&htim6, 0);
-		count = 0;
-	}
-
-#endif
