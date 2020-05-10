@@ -14,6 +14,8 @@
 #define TELLTALES_H_
 
 TIM_HandleTypeDef htim1;
+TIM_HandleTypeDef htim3;
+TIM_HandleTypeDef htim9;
 typedef enum
 {
 	FUEL_LEVEL_GAUGE, ENGINE_SPEED_GAUGE, ENGINE_TEMP_GAUGE

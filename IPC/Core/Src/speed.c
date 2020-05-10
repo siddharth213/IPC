@@ -12,11 +12,12 @@
 /* This function monitors speed of vehicle, 
    odometer count, trip-1 and trip 2 count */
    
-void speed()
+void speed(EngineDataOut * engineSpeed)
 {
-   
-  /* Depending on input rpm  speed changes */
-  uint16_t speed = rpm * RESOLUTION;  
+
+
+	/* Local variable for speed */
+  volatile uint16_t speed = 0;
   
   /* Local variables for odometer count */
   uint16_t tempVar = 0;
@@ -32,6 +33,11 @@ void speed()
   uint16_t trip_2_Switch = 0;
   
   
+  /* Depending on input rpm  speed changes */
+
+
+  speed = engineSpeed->rpm * RESOLUTION;
+
   for(tempVar = 0; tempVar <= rpm; tempVar++)
   {
     countVal = countVal + 1;

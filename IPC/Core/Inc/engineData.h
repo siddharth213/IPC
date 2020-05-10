@@ -9,22 +9,22 @@
 #define SRC_ENGINEDATA_H_
 
 #include "main.h"
+#include "CAN.H"
 
 #define MAX_RPM 6000
+typedef struct
+{
+    uint16_t rpm;
+	double engineTemp;
+	uint8_t engine_fault_sts;
 
+}EngineDataOut;
 
-void getenginedata();
+EngineDataOut * getenginedata(void);
 
 void rx_data();
 
 
-typedef struct  {
-  uint32_t  id;                 // message bit identifier
-  uint8_t  data_pkt[8];           // Data field
-  uint8_t  len;                // Length of data field in bytes
-  uint8_t  format;             // 0 - STANDARD, 1- EXTENDED IDENTIFIER
-  uint8_t type;               // 0 - DATA FRAME, 1 - REMOTE FRAME
-} CAN_msg;
 
 
 

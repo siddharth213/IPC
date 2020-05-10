@@ -7,44 +7,46 @@
 #include "engineData.h"
 
 CAN_msg enginedata;
+EngineDataOut decodeEngineData;
 
-uint16_t   rpm = 0;
+
 
 /*This function decodes from CAN RX and store engine rpm */
-void getenginedata()
+EngineDataOut * getenginedata(void)
 {
-	rx_data();
+	    rx_data();
 
 	    uint16_t msg[8] = {0};
-	    uint8_t engine_fault_sts = 0;
+
 	    uint8_t rawTemp = 0;
-	    double engineTemp = 0;
+
 
 
 	    /*Engine RPM decode*/
 	    msg[0] = (((uint16_t)enginedata.data_pkt[0]) & 0x001f) << 8;
 	    msg[1] = (((uint16_t)enginedata.data_pkt[1]) & 0x00FF);
 
-	    rpm = msg[0] | msg[1];
+	    decodeEngineData.rpm = msg[0] | msg[1];
 
-	    if (rpm > MAX_RPM)
-	    	rpm = MAX_RPM;
+	    if (decodeEngineData.rpm  > MAX_RPM)
+	    	decodeEngineData.rpm  = MAX_RPM;
 
         /*Engine Temperature Decode*/
 	    msg[2] = (((uint16_t)enginedata.data_pkt[2]) & 0x000f) << 8;
 	    msg[3] = (((uint16_t)enginedata.data_pkt[3]) & 0x00FF);
 	    rawTemp = msg[2] | msg[3]; //ADC value of temperature sensor
 
-	    engineTemp = (rawTemp * 3300) / 4095;//reading in mv for 12 bit ADC
-	    engineTemp /= 1000.0;//Reading in V
-	    engineTemp -= 0.760; // Subtract the reference voltage at 25°C
-	    engineTemp /= .0025; // Divide by slope 2.5mV
-	    engineTemp += 25.0; // Add the 25°C
+	    decodeEngineData.engineTemp = (rawTemp * 3300) / 4095;//reading in mv for 12 bit ADC
+	    decodeEngineData.engineTemp /= 1000.0;//Reading in V
+	    decodeEngineData.engineTemp -= 0.760; // Subtract the reference voltage at 25°C
+	    decodeEngineData.engineTemp /= .0025; // Divide by slope 2.5mV
+
+	    decodeEngineData.engineTemp += 25.0; // Add the 25°C
 
 
-	    msg[3] = (((uint16_t)enginedata.data_pkt[4]) & 0x00FF);
+	    decodeEngineData.engine_fault_sts = msg[4] & 0xff; // 0 - No Fault, 0xFF - Fault occurred
 
-	    engine_fault_sts = msg[4] & 0xff; // 0 - No Fault, 0xFF - Fault occured
+	    return &decodeEngineData;
 }
 
 /*This function encodes engine data in to CAN TX data buffer and it is coming from ECM*/
