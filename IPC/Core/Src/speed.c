@@ -13,7 +13,7 @@
 /* This function monitors speed of vehicle, 
    odometer count, trip-1 and trip 2 count */
    
-void speed(EngineDataOut * engineSpeed)
+void speed(EngineDataOut *engineSpeed)
 {
 
 
