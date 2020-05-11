@@ -23,6 +23,7 @@ void battery_CAN_TX()
 	batteryData.data_pkt[1] = (batteryrawADC & 0xff); //MSB ADC value of battery
 
 
+
 }
 
 #if 0

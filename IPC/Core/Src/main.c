@@ -113,7 +113,7 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
-
+  aux_on_condition();
   /* USER CODE END 2 */
 
   /* Infinite loop */
