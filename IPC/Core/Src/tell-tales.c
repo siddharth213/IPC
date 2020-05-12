@@ -69,7 +69,7 @@ int generateRandom_nums(int lower, int upper)
 /*
 **************************************************************************************************
 * @fn                   : fuelLevel_status 
-* @brief                : outputs the value to PWM pin based on the input level of fuel
+* @brief                : output the value to PWM pin based on the input level of fuel
 * @param                : None
 * @return               : None
 **************************************************************************************************
@@ -115,10 +115,11 @@ void fuelLevel_status(void)
 }
 /*
 *****************************************************************************************************
-* @fn
-* @brief
-* @param
-* @return
+* @fn  		oil_fault_status
+* @brief  	read the specified pin, compares the value and accordingly the output value
+*               is set/reset on the specified pin
+* @param        None
+* @return       None
 *****************************************************************************************************
 */
 void oilFault_status(void)
