@@ -78,6 +78,6 @@ void fn_rtc(void)
 	  	  get_time();
 	  	  display_time();
 	  	  HAL_Delay(500);
-	  	}
+		}
 }
 
