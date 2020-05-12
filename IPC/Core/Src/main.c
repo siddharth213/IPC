@@ -113,7 +113,13 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
-  aux_on_condition();
+
+power_on();
+
+	// UART_TX("RAM FAILURE");
+
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -643,7 +649,12 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void power_on(void)
+{
+	 if(ram_Test_DataBus() && ram_Test_AddressBus() == NULL)
+		  aux_on_condition();
 
+}
 /* USER CODE END 4 */
 
 /**

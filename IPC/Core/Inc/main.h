@@ -86,7 +86,7 @@ void Error_Handler(void);
 #define engineTempIndicator_Pin GPIO_PIN_9
 #define engineTempIndicator_GPIO_Port GPIOC
 /* USER CODE BEGIN Private defines */
-
+void power_on(void);
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
