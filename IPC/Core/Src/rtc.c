@@ -4,7 +4,7 @@
  *  Created on: May 12, 2020
  *      Author: Kala
  */
-#include "lcd_driver.c"
+#include "lcd_driver.h"
 
 
 RTC_HandleTypeDef hrtc;
@@ -52,9 +52,9 @@ void get_time(void)
 	HAL_RTC_GetDate(&hrtc,&gDate,RTC_FORMAT_BIN);
 
 	/*Display time format : hh:mm */
-	sprintf((char*)time,"%02d:%02d",gTime.Hours,gTime.Minutes);
+	sprintf((char*)g_time,"%02d:%02d",gTime.Hours,gTime.Minutes);
 	/*Display date format : dd-mm-yy */
-	sprintf((char*)date, "%02d-%02d-%2d",gDate.Date,gDate.Month,gDate.Year);
+   sprintf((char*)g_date, "%02d-%02d-%2d",gDate.Date,gDate.Month,gDate.Year);
 }
 
 void disp_time_date(void)
