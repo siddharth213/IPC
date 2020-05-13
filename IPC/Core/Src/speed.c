@@ -38,21 +38,16 @@ void speed(EngineDataOut *engineSpeed)
 
 
   speed = engineSpeed->rpm * RESOLUTION;
-	
-	LCD_Send_Cmd(0x0E);
-	LCD_Send_Cmd(0x80);
-	LCD_Send_String("Speed:");
-	LCD_Send_Data(speed);
-	
 
   servo_write((speed/MAX_SPEED)*180, ENGINE_SPEED_GAUGE);
 
   HAL_Delay(20);
 
-
- LCD_Send_Cmd(0x0E);
- LCD_Send_Cmd(0xC0); 
+ LCD_Send_Cmd(0x01); // clear display screen 
+ LCD_Send_Cmd(0x0E); // display on cursor blinking
+ LCD_Send_Cmd(0x80);  // force cursor to begining of first line
  LCD_Send_String("Odometer:");
+	
   for(tempVar = 0; tempVar <= rpm; tempVar++)
   {
     countVal = countVal + 1;
@@ -65,13 +60,20 @@ void speed(EngineDataOut *engineSpeed)
 	
 	 LCD_Send_Data(odometerCount);
 
-	     
-      
+	          
       /* for trip-1 count */
       tripOneMeterCount = tripOneMeterCount + 1;
-      
+      LCD_Send_Cmd(0xC0); // force cursor to begining of the second line
+      LCD_Send_String("Trip-1:");
+	    
+      LCD_Send_Data(tripOneMeter);
+	    
       /* for trip-2 count */
       tripTwoMeterCount = tripTwoMeterCount + 1;
+      LCD_Send_String("Trip-2:");
+	    
+      LCD_Send_Data(tripTwoMeter);
+	    
       
       
       /* for Reset trip-1 count */
