@@ -58,23 +58,21 @@ void speed(EngineDataOut *engineSpeed)
       /* for odometer count */
       odometerCount = odometerCount + 1;
 	
-	 LCD_Send_Data(odometerCount);
+	 LCD_Send_Data(odometerCount); // sending odometer count  to LCD
 
 	          
       /* for trip-1 count */
       tripOneMeterCount = tripOneMeterCount + 1;
       LCD_Send_Cmd(0xC0); // force cursor to begining of the second line
-      LCD_Send_String("Trip-1:");
+      LCD_Send_String("Trip-1:");  
 	    
-      LCD_Send_Data(tripOneMeter);
+      LCD_Send_Data(tripOneMeter); // sending Trip-1 count  to LCD
 	    
       /* for trip-2 count */
       tripTwoMeterCount = tripTwoMeterCount + 1;
-      LCD_Send_String("Trip-2:");
+      LCD_Send_String("Trip-2:"); 
 	    
-      LCD_Send_Data(tripTwoMeter);
-	    
-      
+      LCD_Send_Data(tripTwoMeter);  // sending Trip-2 count  to LCD
       
       /* for Reset trip-1 count */
       if((trip_1_Switch == 1 || tripOneMeterCount == 99))
