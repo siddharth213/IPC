@@ -18,8 +18,10 @@ I2C_HandleTypeDef hi2c1;
  */
 void LCD_Send_Data(uint8_t data)
 {
-	uint8_t data_u, data_l;
-	uint8_t data_u_tx[2], data_l_tx[2];
+	uint8_t data_u = 0;
+	uint8_t data_l = 0;
+	uint8_t data_u_tx[2];
+	uint8_t data_l_tx[2];
 
 	/*Store upper nibble*/
 	data_u = (data & 0xF0);
