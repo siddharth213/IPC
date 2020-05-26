@@ -15,7 +15,7 @@
  **************************************************************************************************
 */
 
-gauge_type Gauge;
+gauge_type Gauge = 0;
 
 void seatBelt_status(void)
 {
@@ -60,7 +60,7 @@ void handBrake_status(void)
 */
 int generateRandom_nums(int lower, int upper)
 {
-       uint16_t num =0;
+       uint16_t num = 0;
         num = (rand() % (upper - lower + 1)) + lower;
        // printf("%d ", num);
         return num;
