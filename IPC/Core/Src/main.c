@@ -652,8 +652,9 @@ static void MX_GPIO_Init(void)
 void power_on(void)
 {
 	 if(ram_Test_DataBus() && ram_Test_AddressBus() == NULL)
+	 {
 		  aux_on_condition();
-
+	 }
 }
 /* USER CODE END 4 */
 
