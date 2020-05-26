@@ -34,7 +34,7 @@
  **********************************************************************/
 datum ram_Test_DataBus(volatile datum * address)
 {
-    datum pattern;
+    datum pattern = 0 ;
 
 
     /*
@@ -83,8 +83,8 @@ datum ram_Test_DataBus(volatile datum * address)
 datum * ram_Test_AddressBus(volatile datum * baseAddress, unsigned long nBytes)
 {
     unsigned long addressMask = (nBytes/sizeof(datum) - 1);
-    unsigned long offset;
-    unsigned long testOffset;
+    unsigned long offset = 0;
+    unsigned long testOffset = 0;
 
     datum pattern     = (datum) 0xAAAAAAAA;
     datum antipattern = (datum) 0x55555555;
@@ -167,8 +167,8 @@ datum * ram_Test_Device(volatile datum * baseAddress, unsigned long nBytes)
     unsigned long offset;
     unsigned long nWords = nBytes / sizeof(datum);
 
-    datum pattern;
-    datum antipattern;
+    datum pattern = 0;
+    datum antipattern = 0;
 
 
     /*
