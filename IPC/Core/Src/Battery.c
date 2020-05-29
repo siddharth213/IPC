@@ -12,7 +12,7 @@
 
 CAN_msg batteryData;
 
-void battery_CAN_TX()
+void battery_Can_Tx(void)
 {
 
 	uint16_t batteryrawADC = ((rand () % 4095) + 1);// ADC random value of Battery
